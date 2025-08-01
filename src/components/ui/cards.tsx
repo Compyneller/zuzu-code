@@ -1,14 +1,8 @@
-import {
-  ArrowLeft,
-  ArrowRight,
-  CircleCheckBig,
-  MapPin,
-  Sparkles,
-  Star,
-} from "lucide-react";
+import { ArrowRight, Sparkles, Star } from "lucide-react";
 import Image from "next/image";
-import React from "react";
+import { useState } from "react";
 import Button from "./button";
+import Checkbox from "./checkbox";
 
 export type cardData = {
   id: number;
@@ -20,6 +14,8 @@ export type cardData = {
 };
 
 const Cards = ({ data }: { data: cardData }) => {
+  const [agreed, setAgreed] = useState(false);
+
   return (
     <div className="w-full shadow-sm py-4 px-2.5">
       <div className="w-full mb-[19px] flex items-center gap-[15.6px]">
@@ -90,70 +86,11 @@ const Cards = ({ data }: { data: cardData }) => {
       </div>
       <div className="w-[225.83px] mt-[29px] mx-auto bg-secondary-bg py-[17px] px-[22px]">
         <div className="flex items-center gap-[11px]">
-          <svg
-            width="30"
-            height="30"
-            viewBox="0 0 30 30"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg">
-            <g filter="url(#filter0_d_1_127)">
-              <rect
-                width="24"
-                height="24"
-                transform="translate(3 3.07324)"
-                fill="#1CDD0A"
-              />
-              <path
-                d="M9.75 15.8232L13.25 19.3232L20.25 11.8232"
-                stroke="white"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </g>
-            <defs>
-              <filter
-                id="filter0_d_1_127"
-                x="0.5"
-                y="0.573242"
-                width="29"
-                height="29"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB">
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feMorphology
-                  radius="0.5"
-                  operator="dilate"
-                  in="SourceAlpha"
-                  result="effect1_dropShadow_1_127"
-                />
-                <feOffset />
-                <feGaussianBlur stdDeviation="1" />
-                <feComposite in2="hardAlpha" operator="out" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.1 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow_1_127"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow_1_127"
-                  result="shape"
-                />
-              </filter>
-            </defs>
-          </svg>
+          <Checkbox
+            id={`${data.id}`}
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+          />
 
           <Button className="py-[6.5px] px-[11.5px] text-white bg-primary-btn ">
             Request Reply

@@ -1,11 +1,13 @@
-import { ArrowRight, CircleCheckBig, Sparkles, Star } from "lucide-react";
-import { MapPin } from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import Image from "next/image";
-import React from "react";
-import { cardData } from "./cards";
+import { useState } from "react";
 import Button from "./button";
+import { cardData } from "./cards";
+import Checkbox from "./checkbox";
 
 const DesktopCard = ({ data }: { data: cardData }) => {
+  const [agreed, setAgreed] = useState(false);
+
   return (
     <div className="grid shadow-sm grid-cols-1 md:grid-cols-4">
       <div className="col-span-3  py-[30px] px-[22px]">
@@ -105,7 +107,7 @@ const DesktopCard = ({ data }: { data: cardData }) => {
       </div>
       <div className="col-span-1">
         <div className="w-full bg-secondary-bg h-full flex flex-col gap-[15px] items-center justify-center">
-          <svg
+          {/* <svg
             width="30"
             height="30"
             viewBox="0 0 30 30"
@@ -168,7 +170,12 @@ const DesktopCard = ({ data }: { data: cardData }) => {
                 />
               </filter>
             </defs>
-          </svg>
+          </svg> */}
+          <Checkbox
+            id={`${data.id}`}
+            checked={agreed}
+            onChange={(e) => setAgreed(e.target.checked)}
+          />
           <Button className="py-[6.5px] px-[29px] text-lg font-medium text-white bg-primary-btn ">
             Request Reply
           </Button>
