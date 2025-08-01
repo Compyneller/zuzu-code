@@ -3,6 +3,7 @@ import { MapPin } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { cardData } from "./cards";
+import Button from "./button";
 
 const DesktopCard = ({ data }: { data: cardData }) => {
   return (
@@ -168,9 +169,9 @@ const DesktopCard = ({ data }: { data: cardData }) => {
               </filter>
             </defs>
           </svg>
-          <button className="py-[6.5px] px-[29px] text-lg font-medium text-white bg-primary-btn rounded-sm">
+          <Button className="py-[6.5px] px-[29px] text-lg font-medium text-white bg-primary-btn ">
             Request Reply
-          </button>
+          </Button>
         </div>
       </div>
     </div>

@@ -3,6 +3,7 @@ import useScreenSize from "@/hook/useScreenSize";
 import DesktopDropdown from "./desktop-dropdown";
 import MobileDropDown from "./mobile-dropdown";
 import Container from "./ui/container";
+import Button from "./ui/button";
 
 const Matches = () => {
   const isMobile = useScreenSize();
@@ -26,9 +27,9 @@ const Matches = () => {
             <span className="font-semibold">top 5 matches</span> to hear back
             faster
           </h5>
-          <button className="text-white hidden md:block bg-black rounded-sm py-[6.5px] px-[16.5px]">
+          <Button className="text-white hidden md:block bg-black py-[6.5px] px-[16.5px]">
             Request your best matches here
-          </button>
+          </Button>
         </div>
         <div className="mx-auto bg-danger w-fit py-[6px] px-[9px] mt-[18px] rounded-sm text-white">
           <h5 className="font-bold md:font-medium text-[16px] md:text-lg text-center">

@@ -8,6 +8,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
+import Button from "./button";
 
 export type cardData = {
   id: number;
@@ -154,9 +155,9 @@ const Cards = ({ data }: { data: cardData }) => {
             </defs>
           </svg>
 
-          <button className="py-[6.5px] px-[11.5px] text-white bg-primary-btn rounded-sm">
+          <Button className="py-[6.5px] px-[11.5px] text-white bg-primary-btn ">
             Request Reply
-          </button>
+          </Button>
         </div>
       </div>
     </div>

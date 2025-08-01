@@ -1,5 +1,6 @@
 import React from "react";
 import Container from "./ui/container";
+import Button from "./ui/button";
 
 const data = {
   heading: "Web Designer",
@@ -9,9 +10,9 @@ const Hero = () => {
   return (
     <div className="w-full mb-[17.27px] flex items-center justify-center text-center ">
       <Container className="relative">
-        <button className="py-[3px] px-[29px] hidden md:block rounded-sm bg-disable-btn hover:bg-black text-white absolute top-0 left-0">
+        <Button className="py-[3px] px-[29px] hidden md:block  bg-disable-btn hover:bg-black text-white absolute top-0 left-0">
           Back
-        </button>
+        </Button>
         <div className="mb-[25.49px] w-[322.4921875px] md:w-full mx-auto">
           <h1 className="text-2xl md:text-3xl font-semibold text-black ">
             {data.heading}
@@ -21,12 +22,10 @@ const Hero = () => {
           </h5>
         </div>
         <div className="flex items-center w-full justify-center text-white gap-[11px]">
-          <button className="bg-primary-btn py-[4.5px] px-[7px] rounded-sm border-none outline-none">
+          <Button className="bg-primary-btn py-[4.5px] px-[7px] ">
             Your matches
-          </button>
-          <button className="bg-black py-[4.5px] px-[7px] rounded-sm border-none outline-none">
-            Replies
-          </button>
+          </Button>
+          <Button className="bg-black py-[4.5px] px-[7px] r">Replies</Button>
         </div>
       </Container>
     </div>
